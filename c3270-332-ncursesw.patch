@@ -1,0 +1,11 @@
+--- x3270-3.3/c3270-3.3/configure.in.ncursesw	2003-12-03 11:45:50.000000000 +0100
++++ x3270-3.3/c3270-3.3/configure.in	2003-12-03 11:47:58.000000000 +0100
+@@ -60,7 +60,7 @@
+ dnl Note that the order here is important.  The last libraries should appear
+ dnl first, so that objects in them can be used by subsequent libraries.
+ AC_CHECK_LIB(util, forkpty)
+-AC_CHECK_LIB(ncurses, newterm, , [AC_CHECK_LIB(curses, newterm, , [AC_MSG_ERROR(Can't find libncurses or new-enough libcurses)])])
++AC_CHECK_LIB(ncursesw, newterm, , [ AC_CHECK_LIB(ncurses, newterm, , [AC_CHECK_LIB(curses, newterm, , [AC_MSG_ERROR(Can't find libncurses or new-enough libcurses)])])])
+ if test "$with_readline" != no; then
+ AC_CHECK_LIB(readline, rl_initialize)
+ fi

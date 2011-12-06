@@ -1,0 +1,12 @@
+diff -up x3270-3.3/c3270-3.3/Makefile.in.linker x3270-3.3/c3270-3.3/Makefile.in
+--- x3270-3.3/c3270-3.3/Makefile.in.linker	2010-02-26 20:50:44.000000000 +0100
++++ x3270-3.3/c3270-3.3/Makefile.in	2010-02-26 20:52:29.000000000 +0100
+@@ -51,7 +51,7 @@ INSTALL_DATA = @INSTALL_DATA@
+ XCPPFLAGS = -I. -DLIBX3270DIR=\"$(LIBX3270DIR)\" @XPOSIX@ @XANSI@ @XPRECOMP@ @CPPFLAGS@
+ CFLAGS = @CFLAGS@ $(XCPPFLAGS) $(CDEBUGFLAGS)
+ LDFLAGS = @LDFLAGS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ -ltinfo
+ 
+ version.o: $(VOBJS) version.txt mkversion.sh
+ 	@chmod +x mkversion.sh version.txt

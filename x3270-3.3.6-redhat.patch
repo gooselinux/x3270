@@ -1,0 +1,18 @@
+diff -up x3270-3.3/Examples/cms_logon.bash.rh x3270-3.3/Examples/cms_logon.bash
+--- x3270-3.3/Examples/cms_logon.bash.rh	2008-10-02 14:19:49.000000000 +0200
++++ x3270-3.3/Examples/cms_logon.bash	2008-10-02 14:20:05.000000000 +0200
+@@ -1,4 +1,4 @@
+-#! /usr/local/bin/bash
++#! /bin/bash
+ 
+ # Copyright 1995, 2000, 2002 by Paul Mattes.
+ #  Permission to use, copy, modify, and distribute this software and its
+diff -up x3270-3.3/Examples/peer_script.expect.rh x3270-3.3/Examples/peer_script.expect
+--- x3270-3.3/Examples/peer_script.expect.rh	2008-10-02 14:20:28.000000000 +0200
++++ x3270-3.3/Examples/peer_script.expect	2008-10-02 14:20:40.000000000 +0200
+@@ -1,4 +1,4 @@
+-#! /usr/local/bin/expect
++#! /usr/bin/expect
+ # TSO login script, which runs as a peer of x3270.
+ # expect version
+ 

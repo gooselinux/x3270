@@ -1,0 +1,28 @@
+diff -urN x3270-3.3/3270ds.h x3270-3.3_new/3270ds.h
+--- x3270-3.3/3270ds.h	2004-07-05 21:22:04.000000000 +0200
++++ x3270-3.3_new/3270ds.h	2005-01-13 11:58:38.716890528 +0100
+@@ -285,8 +285,10 @@
+ #define MINUS1	0xffffffffU
+ 
+ #define SET16(ptr, val) { \
+-	*((ptr)++) = ((val) & MASK16) >> 8; \
+-	*((ptr)++) = ((val) & MASK08); \
++	*(ptr) = ((val) & MASK16) >> 8; \
++	(ptr)++; \
++	*(ptr) = ((val) & MASK08); \
++	(ptr)++;  \
+ }
+ #define GET16(val, ptr) { \
+ 	(val) = *((ptr)+1); \
+diff -urN x3270-3.3/qcpp.c x3270-3.3_new/qcpp.c
+--- x3270-3.3/qcpp.c	2002-12-05 00:34:18.000000000 +0100
++++ x3270-3.3_new/qcpp.c	2005-01-13 11:59:28.924631795 +0100
+@@ -44,7 +44,7 @@
+ {
+ 	int c;
+ 	char buf[1024];
+-	FILE *f, *t, *o;
++	FILE *f = 0, *t, *o;
+ 	int nest = 0;
+ 	int ln = 0;
+ 	int pass[MAX_NEST];

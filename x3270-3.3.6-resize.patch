@@ -1,0 +1,10 @@
+--- x3270-3.3/screen.c.old	2007-07-18 08:58:54.000000000 +0100
++++ x3270-3.3/screen.c	2007-07-18 08:59:07.000000000 +0100
+@@ -5072,7 +5072,6 @@
+ 		trace_event("  bigger\n    asserting desired size\n");
+ 		set_toplevel_sizes();
+ 		screen_redo = REDO_NONE;
+-		goto done;
+ 	}
+ 
+ 	/* They're not correct. */
